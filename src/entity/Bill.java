@@ -6,6 +6,7 @@ public class Bill {
     int price;
     String description;
 
+
     public Bill(Member member, int price, String description) {
         this.member = member;
         this.price = price;

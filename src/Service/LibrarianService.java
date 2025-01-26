@@ -10,9 +10,7 @@ import java.util.Optional;
 public interface LibrarianService {
 
     int calculateFine(Optional<BookStatus> bookStatus, Optional<Integer> day);
-
     Bill createBill(Bill bill);
-
     List<Book> searchBook();
 
 }

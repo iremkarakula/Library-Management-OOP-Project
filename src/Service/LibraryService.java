@@ -10,11 +10,8 @@ import java.util.List;
 public interface LibraryService {
 
     List<Author> getAuthors();
-
     List<Book> getBooks();
-
     List<Member> getMembers();
-
     List<BookLoan> loanBooks();
 
 }
