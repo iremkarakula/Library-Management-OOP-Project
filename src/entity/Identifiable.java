@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public abstract class Identifiable {
 
     private long id;
-
     private LocalDate recordDate;
 
     public Identifiable(long id) {

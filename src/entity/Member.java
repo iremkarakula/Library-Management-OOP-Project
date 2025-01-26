@@ -9,9 +9,9 @@ public class Member extends Person{
     private Address address;
     private String phone;
     private List<Book> loanedBookHistory;
-    private List<Book> loanedBooks;
+    private List<BookLoan> loanedBooks;
 
-    public Member(long id, String firstName, String lastName, LocalDate birthOfDate, MemberStatus status, Address address, String phone, List<Book> loanedBookHistory, List<Book> loanedBooks) {
+    public Member(long id, String firstName, String lastName, LocalDate birthOfDate, MemberStatus status, Address address, String phone, List<Book> loanedBookHistory, List<BookLoan> loanedBooks) {
         super(id, firstName, lastName, birthOfDate);
         this.status = status;
         this.address = address;
@@ -52,11 +52,11 @@ public class Member extends Person{
         this.loanedBookHistory = loanedBookHistory;
     }
 
-    public List<Book> getLoanedBooks() {
+    public List<BookLoan> getLoanedBooks() {
         return loanedBooks;
     }
 
-    public void setLoanedBooks(List<Book> loanedBooks) {
+    public void setLoanedBooks(List<BookLoan> loanedBooks) {
         this.loanedBooks = loanedBooks;
     }
 }
