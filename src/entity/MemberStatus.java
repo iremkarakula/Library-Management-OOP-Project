@@ -6,7 +6,7 @@ public enum MemberStatus {
     ADULT_NON_WORKING("Çalışmayan yetişkin"),
     SENIOR("Yaşlı");
 
-    private String description;
+    private final String description;
 
     MemberStatus(String description) {
         this.description = description;

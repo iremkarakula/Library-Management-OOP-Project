@@ -1,16 +1,16 @@
-package Service;
+package service;
 
-import entity.Bill;
-import entity.Book;
 import entity.BookStatus;
+import entity.Member;
 
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalDate;
+
 
 public interface LibrarianService {
 
-    int calculateFine(Optional<BookStatus> bookStatus, Optional<Integer> day);
-    Bill createBill(Bill bill);
-    List<Book> searchBook();
+    long applyRentalFee(Member member);
+    long applyLateReturnFee(Member member, LocalDate returnedDate);
+    long applyBookDamageFee(Member member);
+    long applyBookLossFee(Member member);
 
 }

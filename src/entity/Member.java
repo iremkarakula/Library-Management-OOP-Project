@@ -1,6 +1,9 @@
 package entity;
 
+import util.ValidatePhone;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member extends Person{
@@ -10,14 +13,24 @@ public class Member extends Person{
     private String phone;
     private List<Book> loanedBookHistory;
     private List<BookLoan> loanedBooks;
+    private int totalDebt;
+    private List<Bill> bills;
 
-    public Member(long id, String firstName, String lastName, LocalDate birthOfDate, MemberStatus status, Address address, String phone, List<Book> loanedBookHistory, List<BookLoan> loanedBooks) {
-        super(id, firstName, lastName, birthOfDate);
+
+
+    public Member(String firstName, String lastName, String birthOfDate, MemberStatus status, Address address, String phone) {
+        super( firstName, lastName, birthOfDate);
         this.status = status;
         this.address = address;
         this.phone = phone;
-        this.loanedBookHistory = loanedBookHistory;
-        this.loanedBooks = loanedBooks;
+        this.loanedBookHistory = new ArrayList<>();
+        this.loanedBooks = new ArrayList<>();
+        this.totalDebt = 0;
+        this.bills = new ArrayList<>();
+
+        if(!ValidatePhone.isValidPhoneNumber(phone)){
+            throw new IllegalArgumentException("Telefon numarası geçersiz");
+        }
     }
 
     public MemberStatus getStatus() {
@@ -41,6 +54,11 @@ public class Member extends Person{
     }
 
     public void setPhone(String phone) {
+
+        if(!ValidatePhone.isValidPhoneNumber(phone)){
+            throw new IllegalArgumentException("Telefon numarası geçersiz");
+        }
+
         this.phone = phone;
     }
 
@@ -58,5 +76,21 @@ public class Member extends Person{
 
     public void setLoanedBooks(List<BookLoan> loanedBooks) {
         this.loanedBooks = loanedBooks;
+    }
+
+    public int getTotalDebt() {
+        return totalDebt;
+    }
+
+    public void setTotalDebt(int totalDebt) {
+        this.totalDebt = totalDebt;
+    }
+
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
     }
 }

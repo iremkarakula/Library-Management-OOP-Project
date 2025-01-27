@@ -1,18 +1,20 @@
-package Service;
+package service;
 
-import entity.Author;
+import dto.BookDTO;
 import entity.Book;
 import entity.BookStatus;
 
 import java.util.List;
+import java.util.Set;
 
 public interface BookService {
 
-    List<Book> getBooksByAuthor(long authorId);
-    Book createBook(Book book);
-    Book updateBook(long bookId, Book book);
-    Book deleteBook(long bookId);
-    Boolean updateBookStatus(long bookId, BookStatus bookStatus);
+    Set<Book> getBooksByAuthor(long authorId);
+    Book getBook(long id);
+    Book createBook(BookDTO book, long authorId);
+    Book updateBook(long bookId, BookDTO book);
+    Boolean deleteBook(long bookId);
+    BookStatus updateBookStatus(long bookId, String status);
 
 
 }

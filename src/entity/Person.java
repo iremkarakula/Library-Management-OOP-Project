@@ -1,6 +1,7 @@
 package entity;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public abstract class Person extends Identifiable{
 
@@ -9,11 +10,16 @@ public abstract class Person extends Identifiable{
     private LocalDate birthOfDate;
 
 
-    public Person(long id, String firstName, String lastName, LocalDate birthOfDate) {
-        super(id);
+    public Person( String firstName, String lastName, String birthOfDateString) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.birthOfDate = birthOfDate;
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.birthOfDate = LocalDate.parse(birthOfDateString, formatter);
+    }
+
+    public Person() {
     }
 
     public String getFirstName() {
@@ -36,7 +42,9 @@ public abstract class Person extends Identifiable{
         return birthOfDate;
     }
 
-    public void setBirthOfDate(LocalDate birthOfDate) {
-        this.birthOfDate = birthOfDate;
+    public void setBirthOfDate(String birthOfDateString) {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.birthOfDate = LocalDate.parse(birthOfDateString, formatter);
     }
 }

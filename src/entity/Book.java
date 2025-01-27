@@ -9,12 +9,12 @@ public class Book extends Identifiable{
     private Location location;
     private Member currentHolder;
 
-    public Book(long id, Author author, BookStatus bookStatus, String name, Location location, Category category) {
-        super(id);
+    public Book(Author author, String name, Category category) {
+        super();
         this.author = author;
-        this.bookStatus = bookStatus;
+        this.bookStatus = BookStatus.AVAILABLE;
         this.name = name;
-        this.location = location;
+        this.location = Location.LIBRARY;
         this.category = category;
     }
 

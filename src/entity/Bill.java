@@ -2,9 +2,9 @@ package entity;
 
 public class Bill {
 
-    Member member;
-    int price;
-    String description;
+    private Member member;
+    private int price;
+    private String description;
 
 
     public Bill(Member member, int price, String description) {

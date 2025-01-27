@@ -1,19 +1,24 @@
 package entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
 
-    List<Author> authors;
-    List<Book> books;
-    List<BookLoan> loanedBooks;
-    List<Member> members;
+    private List<Author> authors;
+    private List<Book> books;
+    private List<Book> loanedBookHistory;
+    private List<BookLoan> loanedBooks;
+    private List<Member> members;
+    private List<Bill> bills;
 
-    public Library(List<Author> authors, List<Book> books, List<BookLoan> loanedBooks, List<Member> members) {
-        this.authors = authors;
-        this.books = books;
-        this.loanedBooks = loanedBooks;
-        this.members = members;
+    public Library() {
+        this.authors = new ArrayList<>();
+        this.books = new ArrayList<>();
+        this.loanedBookHistory = new ArrayList<>();
+        this.loanedBooks = new ArrayList<>();
+        this.members = new ArrayList<>();
+        this.bills = new ArrayList<>();
     }
 
 
@@ -47,5 +52,21 @@ public class Library {
 
     public void setLoanedBooks(List<BookLoan> loanedBooks) {
         this.loanedBooks = loanedBooks;
+    }
+
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
+    }
+
+    public List<Book> getLoanedBookHistory() {
+        return loanedBookHistory;
+    }
+
+    public void setLoanedBookHistory(List<Book> loanedBookHistory) {
+        this.loanedBookHistory = loanedBookHistory;
     }
 }

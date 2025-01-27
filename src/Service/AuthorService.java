@@ -1,14 +1,12 @@
-package Service;
+package service;
 
+import dto.AuthorDTO;
 import entity.Author;
-import entity.Book;
-
-import java.util.List;
 
 public interface AuthorService {
 
     Author getAuthor(long id);
-    Author createAuthor(Author author);
-    Author updateAuthor(long id, Author author);
+    Author createAuthor(AuthorDTO author);
+    Author updateAuthor(long id, AuthorDTO author);
     Boolean deleteAuthor(long id);
 }

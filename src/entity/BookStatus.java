@@ -26,4 +26,8 @@ public enum BookStatus {
         return localDateTime;
     }
 
+    public void updateLocalDateTime(){
+        this.localDateTime = LocalDateTime.now();
+    }
+
 }

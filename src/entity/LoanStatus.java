@@ -2,7 +2,8 @@ package entity;
 
 public enum LoanStatus {
     ON_LOAN("Ödünç alınmış"),
-    RETURNED("İade edilmiş");
+    RETURNED("İade edilmiş"),
+    LOST("Kayıp");
 
     private String description;
 

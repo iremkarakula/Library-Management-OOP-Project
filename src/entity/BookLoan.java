@@ -10,12 +10,12 @@ public class BookLoan extends Identifiable {
     private LocalDate returnDate;
     private LoanStatus loanStatus;
 
-    public BookLoan(long id, Book book, LocalDate loanDate, Member member, LocalDate returnDate, LoanStatus loanStatus) {
-        super(id);
+    public BookLoan(Book book, Member member, LoanStatus loanStatus) {
+        super();
         this.book = book;
-        this.loanDate = loanDate;
+        this.loanDate = LocalDate.now();
         this.member = member;
-        this.returnDate = returnDate;
+        this.returnDate = this.loanDate.plusDays(15);
         this.loanStatus = loanStatus;
     }
 

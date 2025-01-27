@@ -7,8 +7,8 @@ public class Librarian extends Person{
     private Address address;
     private String phone;
 
-    public Librarian(long id, String firstName, String lastName, LocalDate birthOfDate, Address address, String phone) {
-        super(id, firstName, lastName, birthOfDate);
+    public Librarian( String firstName, String lastName, String birthOfDate, Address address, String phone) {
+        super( firstName, lastName, birthOfDate);
         this.address = address;
         this.phone = phone;
     }
