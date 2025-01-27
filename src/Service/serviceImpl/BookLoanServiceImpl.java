@@ -41,7 +41,7 @@ public class BookLoanServiceImpl implements BookLoanService {
 
         BookLoan bookLoan = new BookLoan(book, member, LoanStatus.ON_LOAN);
 
-        book.setBookStatus(BookStatus.CHECKED_OUT);
+        bookService.updateBookStatus(book, BookStatus.CHECKED_OUT);
         library.getLoanedBookHistory().add(book);
         library.getLoanedBooks().add(bookLoan);
         member.getLoanedBookHistory().add(book);
@@ -70,14 +70,14 @@ public class BookLoanServiceImpl implements BookLoanService {
 
        if(bookStatus == BookStatus.LOST){
          librarianService.applyBookLossFee(member);
-           book.setBookStatus(BookStatus.LOST);
+           bookService.updateBookStatus(book, BookStatus.LOST);
            bookLoan.setLoanStatus(LoanStatus.LOST);
        } else if(bookStatus == BookStatus.DAMAGED){
             librarianService.applyBookDamageFee(member);
-            book.setBookStatus(BookStatus.DAMAGED);
+           bookService.updateBookStatus(book, BookStatus.DAMAGED);
             bookLoan.setLoanStatus(LoanStatus.RETURNED);
         } else {
-           book.setBookStatus(BookStatus.AVAILABLE);
+           bookService.updateBookStatus(book, BookStatus.AVAILABLE);
            bookLoan.setLoanStatus(LoanStatus.RETURNED);
 
        }

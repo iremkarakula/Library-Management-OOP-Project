@@ -14,7 +14,7 @@ public interface BookService {
     Book createBook(BookDTO book, long authorId);
     Book updateBook(long bookId, BookDTO book);
     Boolean deleteBook(long bookId);
-    BookStatus updateBookStatus(long bookId, String status);
+    BookStatus updateBookStatus(Book book, BookStatus status);
 
 
 }

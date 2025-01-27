@@ -86,11 +86,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public BookStatus updateBookStatus(long bookId, String status) {
-        Book book = getBook(bookId);
-        BookStatus bookStatus = BookStatus.valueOf(status.toUpperCase().replace(" ", "_"));
-        bookStatus.updateLocalDateTime();
-        book.setBookStatus(bookStatus);
+    public BookStatus updateBookStatus(Book book, BookStatus status) {
+        status.updateLocalDateTime();
+        book.setBookStatus(status);
         return book.getBookStatus();
     }
 }
