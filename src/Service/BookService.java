@@ -12,7 +12,7 @@ public interface BookService {
     Set<Book> getBooksByAuthor(long authorId);
     Book getBook(long id);
     Book createBook(BookDTO book, long authorId);
-    Book updateBook(long bookId, BookDTO book);
+    Book updateBook(long bookId, BookDTO book, long authorID);
     Boolean deleteBook(long bookId);
     BookStatus updateBookStatus(Book book, BookStatus status);
 
