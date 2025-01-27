@@ -1,1 +1,2 @@
-https://github.com/iremkarakula/Library-Management-OOP-Project/blob/master/library-management-schema.PNG
+![Library Management Schema](https://raw.githubusercontent.com/iremkarakula/Library-Management-OOP-Project/master/library-management-schema.PNG)
+
