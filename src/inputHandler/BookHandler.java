@@ -114,7 +114,6 @@ public class BookHandler {
                 break;
             case 7:
                 break;
-
             default:
                 System.out.println("Geçersiz seçim");
         }

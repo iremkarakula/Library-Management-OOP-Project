@@ -132,6 +132,7 @@ public class MemberHandler {
                 break;
             case 7:
                 break;
+
             default:
                 System.out.println("Geçersiz seçim, lütfen geçerli bir seçenek girin.");
         }

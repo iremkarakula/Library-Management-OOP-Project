@@ -64,7 +64,6 @@ public class BookLoanHandler {
                 break;
             case 4:
                 break;
-
             default:
                 System.out.println("Geçersiz seçim!");
         }

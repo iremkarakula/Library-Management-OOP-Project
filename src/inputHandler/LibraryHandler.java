@@ -112,7 +112,6 @@ public class LibraryHandler {
                 break;
             case 15:
                 break;
-
             default:
                 System.out.println("Geçersiz seçim.");
         }

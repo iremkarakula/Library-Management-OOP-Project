@@ -55,6 +55,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book updateBook(long bookId, BookDTO book, long authorID) {
+
         Book foundBook = getBook(bookId);
         Category category = Category.valueOf(book.category());
         foundBook.setCategory(category);
